@@ -18,7 +18,6 @@ namespace Blackjack
                 Console.WriteLine(card.Rank);
             }
             Console.WriteLine(hand.Score);
-            Console.WriteLine(hand.Score);
             
         }
     }
