@@ -3,8 +3,10 @@ using System;
 namespace Blackjack {
     public class Deck {
         private Card[] cards;
+        private int dealtCount;
 
         public Deck() {
+            dealtCount = 0;
             cards = new Card[] {
                 new Card(1, 'A'),
                 new Card(1, 'A'),
@@ -83,6 +85,10 @@ namespace Blackjack {
                 cards[i] = cards[iSwap];
                 cards[iSwap] = temp;
             }
+        }
+
+        public Card Deal() {
+            return cards[dealtCount++];
         }
     }
 }
