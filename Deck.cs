@@ -1,3 +1,5 @@
+using System;
+
 namespace Blackjack {
     public class Deck {
         private Card[] cards;
@@ -69,6 +71,18 @@ namespace Blackjack {
                 new Card(10, 'K'),
                 new Card(10, 'K'),
             };
+        }
+
+        public void Shuffle() {
+            var rand = new Random();
+            Card temp = null;
+
+            for(int i = 0; i < 52; i++) {
+                int iSwap = rand.Next(52);
+                temp = cards[i];
+                cards[i] = cards[iSwap];
+                cards[iSwap] = temp;
+            }
         }
     }
 }
